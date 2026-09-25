@@ -1,4 +1,4 @@
-var SHELL = 'japan2026-shell-v11';
+var SHELL = 'japan2026-shell-v12';
 var SHELL_FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './styles.css', './places.js', './app.js',
   './config.js', './vendor/atkinson-400.woff2', './vendor/atkinson-700.woff2'];
 self.addEventListener('install', function (e) {

@@ -1,0 +1,13 @@
+[
+  { "featureType": "poi", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "visibility": "on" }] },
+  { "featureType": "transit", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "saturation": -70 }, { "lightness": 45 }] },
+  { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "road", "elementType": "geometry", "stylers": [{ "saturation": -55 }, { "lightness": 15 }] },
+  { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] },
+  { "featureType": "landscape.man_made", "elementType": "labels", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "administrative.land_parcel", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "administrative.neighborhood", "elementType": "labels", "stylers": [{ "visibility": "off" }] },
+  { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "off" }] }
+]
