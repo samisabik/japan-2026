@@ -241,16 +241,6 @@ var PLACES = window.PLACES || [];
   document.getElementById('locate').addEventListener('click', function () {
     initMap().then(locate).catch(function () {});
   });
-  document.getElementById('fitTokyo').addEventListener('click', function () {
-    initMap().then(function () { map.fitBounds(TOKYO); }).catch(function () {});
-  });
-  document.getElementById('fitAll').addEventListener('click', function () {
-    initMap().then(function () {
-      var b = new google.maps.LatLngBounds();
-      PLACES.forEach(function (p) { b.extend({ lat: p.lat, lng: p.lng }); });
-      map.fitBounds(b, 30);
-    }).catch(function () {});
-  });
 
   var start = location.hash.slice(1);
   if (!start) { try { start = localStorage.getItem('japan2026-tab') || ''; } catch (e) {} }

@@ -47,8 +47,6 @@
     margin: 0 auto;
     padding: 2.5rem 1.4rem 4rem;
   }
-  h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 0.3rem; }
-  .sub { color: var(--muted); margin: 0 0 2.5rem; }
   h2 {
     font-size: 1.5rem; line-height: 1.3;
     margin: 3rem 0 1rem; padding-top: 1.5rem;
@@ -70,11 +68,9 @@
     font-size: 1.3rem;
   }
 
-  .top { max-width: 38rem; margin: 0 auto; padding: 2.2rem 1.4rem 0.6rem; }
-  .top .sub { margin-bottom: 0.8rem; }
   .tabs {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-    display: grid; grid-template-columns: repeat(6, 1fr);
+    display: grid; grid-template-columns: repeat(5, 1fr);
     background: var(--soft); border-top: 1px solid var(--rule);
     padding: 0 max(0px, calc((100% - 40rem) / 2)) env(safe-area-inset-bottom, 0px);
   }
@@ -84,25 +80,43 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25rem;
     min-height: 4rem; padding: 0.5rem 0.1rem; -webkit-tap-highlight-color: transparent;
   }
-  .tabs svg { width: 1.5rem; height: 1.5rem; padding: 0.15rem 0.7rem; box-sizing: content-box; border-radius: 1rem; }
-  .tabs button[aria-selected="true"] { color: var(--text); font-weight: 700; }
-  .tabs button[aria-selected="true"] svg { background: var(--rule); }
+  /* Each tab carries its category's map colour, so the bar and the pins agree. */
+  .tabs button[data-tab="shopping"] { --tab: #D2691E; }
+  .tabs button[data-tab="see"] { --tab: #2B5FD9; }
+  .tabs button[data-tab="adventures"] { --tab: #1F8A4C; }
+  .tabs button[data-tab="other"] { --tab: #8A3FC7; }
+  .tabs button[data-tab="map"] { --tab: #0F7B8A; }
+  .tabs svg {
+    width: 1.5rem; height: 1.5rem; padding: 0.15rem 0.7rem; box-sizing: content-box;
+    border-radius: 1rem; transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+  .tabs button[aria-selected="true"] { color: var(--tab); font-weight: 700; }
+  .tabs button[aria-selected="true"] svg {
+    background: var(--tab); color: #fff; animation: pop 0.34s cubic-bezier(.34,1.56,.64,1);
+  }
+  .tabs button:active svg { transform: scale(0.88); }
+  @keyframes pop {
+    0% { transform: scale(0.7); }
+    55% { transform: scale(1.14); }
+    100% { transform: scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs svg { transition: none; }
+    .tabs button[aria-selected="true"] svg { animation: none; }
+    .tabs button:active svg { transform: none; }
+  }
   .tabs button:focus-visible { outline: 3px solid var(--link); outline-offset: -3px; }
   body { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)); }
   :root { padding-bottom: 0; }
   a { padding: 0.1rem 0; }
   @media (max-width: 30rem) {
     body { font-size: 1.12rem; }
-    h1 { font-size: 2rem; }
-    .top { padding-top: 1.5rem; }
     main { padding-left: 1.1rem; padding-right: 1.1rem; }
-    .top { padding-left: 1.1rem; padding-right: 1.1rem; }
   }
 
   .pin { background: none; border: 0; color: var(--muted); padding: 0.35rem 0.4rem; margin-left: 0.15rem; vertical-align: -0.35rem; cursor: pointer; border-radius: 0.5rem; }
   .pin svg { width: 1.25rem; height: 1.25rem; display: block; }
   .pin:active { background: var(--rule); }
-  body.maptab .top { display: none; }
   body.maptab main { padding: 0; }
   .mappanel { position: fixed; left: 0; right: 0; top: 0; bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); z-index: 1; }
   #map { position: absolute; inset: 0; background: var(--soft); }
@@ -113,7 +127,6 @@
   .chip[aria-pressed="false"] { opacity: 0.5; }
   .chip[aria-pressed="false"] i { background: transparent !important; box-shadow: inset 0 0 0 2px var(--muted); }
   .mapbtns { position: absolute; z-index: 500; right: 0.7rem; bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-  .zoombtns { position: absolute; z-index: 500; right: 0.7rem; top: calc(env(safe-area-inset-top, 0px) + 4.1rem); display: flex; flex-direction: column; gap: 0.5rem; }
   .fab { font: inherit; font-size: 0.9rem; font-weight: 700; background: var(--bg); color: var(--text); border: 1px solid var(--rule); border-radius: 1.6rem; min-width: 3.2rem; height: 3.2rem; padding: 0 0.9rem; box-shadow: 0 2px 6px rgba(0,0,0,.25); cursor: pointer; }
   .fab.loc { width: 3.6rem; height: 3.6rem; border-radius: 50%; padding: 0; display: grid; place-items: center; }
   .fab.loc svg { width: 1.7rem; height: 1.7rem; }
@@ -131,6 +144,6 @@
   .gm-style .pop .gm { display: inline-block; background: var(--text); color: var(--bg); text-decoration: none; border-radius: 2rem; padding: 0.55rem 1rem; font-weight: 700; }
   .gm-style-iw button[aria-label="Close"] { width: 2.4rem !important; height: 2.4rem !important; }
   .userdot { width: 18px; height: 18px; border-radius: 50%; background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.4); box-sizing: border-box; }
-  main { padding-top: 0.5rem; }
+  main { padding-top: calc(env(safe-area-inset-top, 0px) + 1.4rem); }
   section > h2:first-child { border-top: 0; margin-top: 1rem; padding-top: 0; }
 .fab
