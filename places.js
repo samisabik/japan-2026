@@ -611,16 +611,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Yoyogi+Park/data=!4m2!3m1!1s0x60188cb479620a33:0x34bcc78ce7f8bf3e"
  },
  {
-  "id": 63,
-  "name": "Ain Soph Journey",
-  "note": "Vegan. Shinjuku.",
-  "cat": "other",
-  "lat": 35.69069,
-  "lng": 139.70667,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Ain+Soph.+Journey+Shinjuku/data=!4m2!3m1!1s0x60188cdca1a74cc9:0xbfb9290fe024dc7d"
- },
- {
   "id": 64,
   "name": "Cafe Stay Happy",
   "note": "",
@@ -681,16 +671,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/GYUMON+Shinjuku/data=!4m2!3m1!1s0x60188d7892c6657b:0xab34dd23118e0e5f"
  },
  {
-  "id": 70,
-  "name": "Masaka",
-  "note": "Vegan izakaya.",
-  "cat": "other",
-  "lat": 35.74496,
-  "lng": 139.76099,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Masaka+(Vegan+Izakaya)/data=!4m2!3m1!1s0x60188def16942815:0xb34fb00e05c647fd"
- },
- {
   "id": 71,
   "name": "Ming Teng HAO HAO",
   "note": "",
@@ -731,16 +711,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Sushidokoro+Unitora/data=!4m2!3m1!1s0x60188bdf20adecb3:0x471d374852f94b62"
  },
  {
-  "id": 75,
-  "name": "T's Tantan Ueno",
-  "note": "",
-  "cat": "other",
-  "lat": 35.71408,
-  "lng": 139.77708,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/T's+TanTan+Ecute+Ueno/data=!4m2!3m1!1s0x60188e9c112698a5:0x5f571b1c4018cfee"
- },
- {
   "id": 76,
   "name": "Tokyo National Museum",
   "note": "Ueno",
@@ -749,36 +719,6 @@ window.PLACES = [
   "lng": 139.77667,
   "approx": false,
   "url": "https://www.google.com/maps/place/Tokyo+National+Museum/data=!4m2!3m1!1s0x60188e8314d77d11:0x232fd618bd4977dd"
- },
- {
-  "id": 77,
-  "name": "Tokyo Vegan Bakes",
-  "note": "",
-  "cat": "other",
-  "lat": 35.664,
-  "lng": 139.6647,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/TOKYO+VEGAN+BAKES/data=!4m2!3m1!1s0x6018f3c9bbfa4971:0x90c277df8609bbb8"
- },
- {
-  "id": 78,
-  "name": "T's Tantan",
-  "note": "Vegan ramen. Also at Ueno.",
-  "cat": "other",
-  "lat": 35.68108,
-  "lng": 139.7676,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/T%E2%80%99s+Tantan/data=!4m2!3m1!1s0x60188bfbf5cb32b5:0x7ec63789e70fa29b"
- },
- {
-  "id": 79,
-  "name": "Ayler",
-  "note": "Vegan soba.",
-  "cat": "other",
-  "lat": 35.67205,
-  "lng": 139.68132,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Vegan+Soba+Tokyo+Ayler%EF%BC%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%BC%EF%BC%89/data=!4m2!3m1!1s0x6018f33785f487d9:0x50fc470ba389f7fc"
  },
  {
   "id": 80,
@@ -811,16 +751,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Minamiza+Theater/data=!4m2!3m1!1s0x600108c03d0f278d:0x3f80dd5c373613e"
  },
  {
-  "id": 83,
-  "name": "Ain Soph Journey",
-  "note": "Vegan.",
-  "cat": "other",
-  "lat": 35.0049,
-  "lng": 135.76738,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/AIN+SOPH.+Journey+KYOTO/data=!4m2!3m1!1s0x6001089438dae3c7:0x6664bb88dab2466a"
- },
- {
   "id": 84,
   "name": "Enryakuji",
   "note": "Temple on Mount Hiei.",
@@ -829,36 +759,6 @@ window.PLACES = [
   "lng": 135.843,
   "approx": false,
   "url": "https://www.google.com/maps/place/Enryakuji+Kaikan/data=!4m2!3m1!1s0x60010a3e6ccd3aeb:0x9d9fa7e944e54d91"
- },
- {
-  "id": 85,
-  "name": "Koku Vegan Ramen",
-  "note": "Near Ginkakuji.",
-  "cat": "other",
-  "lat": 35.02831,
-  "lng": 135.79101,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/KOKU+Vegan+Ramen+Kyoto+Ginkakuji/data=!4m2!3m1!1s0x6001090034c30f49:0x479b58504e9944fc"
- },
- {
-  "id": 86,
-  "name": "Mercy Vegan Bakery",
-  "note": "",
-  "cat": "other",
-  "lat": 34.93201,
-  "lng": 135.78358,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/MERCY+Vegan+Bakery/data=!4m2!3m1!1s0x60010fcef0204447:0x8de5bb9baba9dbdc"
- },
- {
-  "id": 87,
-  "name": "Mercy Kyoto Station",
-  "note": "",
-  "cat": "other",
-  "lat": 34.986,
-  "lng": 135.758,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/MERCY+Vegan+Factory+KYOTO+STATION/data=!4m2!3m1!1s0x600109d64a46a449:0x433fb9f86dc303be"
  },
  {
   "id": 88,
@@ -879,36 +779,6 @@ window.PLACES = [
   "lng": 135.77661,
   "approx": true,
   "url": "https://www.google.com/maps/place/Padma/data=!4m2!3m1!1s0x60010858dbc02b5f:0x47aac0f01e08a683"
- },
- {
-  "id": 90,
-  "name": "Uno Ramen Kyoto Station",
-  "note": "food",
-  "cat": "other",
-  "lat": 34.987,
-  "lng": 135.759,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/UNO+RAMEN+-Kyoto+Station-/data=!4m2!3m1!1s0x60010965eeadf1ab:0xbb033c8b92e3eb74"
- },
- {
-  "id": 91,
-  "name": "Uno Ramen Sanjo",
-  "note": "",
-  "cat": "other",
-  "lat": 35.0088,
-  "lng": 135.77,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/UNO+RAMEN+-Sanjo-+Vegan+%26+Gluten-Free+SUSHI/data=!4m2!3m1!1s0x600109003cb0119f:0x727925d9bf3f1b99"
- },
- {
-  "id": 92,
-  "name": "Masaka Kyoto",
-  "note": "Vegan izakaya.",
-  "cat": "other",
-  "lat": 34.99096,
-  "lng": 135.70314,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Vegan+Izakaya+Masaka/data=!4m2!3m1!1s0x6001071d6efb63c5:0x5630a017835bfa28"
  },
  {
   "id": 93,
