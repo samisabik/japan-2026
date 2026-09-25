@@ -11,8 +11,9 @@ var PLACES = window.PLACES || [];
   try { hiddenCats = JSON.parse(localStorage.getItem('japan2026-hidden') || '{}'); } catch (e) {}
 
   // ---- map ----
-  var map = null, markers = {}, layers = {}, userMarker = null, userCircle = null, userPos = null, watchId = null, firstFix = true;
-  var TOKYO = [[35.60, 139.60], [35.78, 139.84]];
+  var map = null, markers = {}, info = null, mapReady = null;
+  var userMarker = null, userCircle = null, userPos = null, watchId = null, firstFix = true;
+  var TOKYO = { south: 35.60, west: 139.60, north: 35.78, east: 139.84 };
 
   function toast(msg) {
     var t = document.getElementById('toast');
@@ -21,38 +22,73 @@ var PLACES = window.PLACES || [];
     toast.timer = setTimeout(function () { t.hidden = true; }, 4000);
   }
 
+  function zoomAtLeast(n) {
+    var z = map.getZoom();
+    map.setZoom(typeof z === 'number' ? Math.max(z, n) : n);
+  }
+
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
   function popupHtml(p) {
-    return '<b>' + esc(p.name) + '</b>' +
+    return '<div class="pop"><b>' + esc(p.name) + '</b>' +
       (p.note ? '<span class="pn">' + esc(p.note) + '</span>' : '') +
       (p.approx ? '<span class="pn">Pin is approximate.</span>' : '') +
-      '<a class="gm" href="' + esc(p.url) + '" target="_blank" rel="noopener">Open in Google Maps</a>';
+      '<a class="gm" href="' + esc(p.url) + '" target="_blank" rel="noopener">Open in Google Maps</a></div>';
   }
 
-  function tileUrl() {
-    var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return 'https://{s}.basemaps.cartocdn.com/' + (dark ? 'dark_all' : 'rastertiles/voyager') + '/{z}/{x}/{y}{r}.png';
+  function dotFor(p) {
+    var d = document.createElement('div');
+    d.className = 'dot' + (p.approx ? ' approx' : '');
+    d.style.background = CATS[p.cat].color;
+    if (p.approx) d.style.borderColor = CATS[p.cat].color;
+    return d;
   }
 
+  // Resolves once the Maps library has loaded and the map exists. Every caller
+  // goes through this because the API script is fetched on demand.
   function initMap() {
-    if (map || !window.L) return !!map;
-    map = L.map('map', { zoomControl: false, tap: true }).fitBounds(TOKYO);
-    L.tileLayer(tileUrl(), {
-      maxZoom: 19, subdomains: 'abcd',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
-    Object.keys(CATS).forEach(function (c) { layers[c] = L.layerGroup(); if (!hiddenCats[c]) layers[c].addTo(map); });
-    PLACES.forEach(function (p) {
-      var m = L.circleMarker([p.lat, p.lng], {
-        radius: 10, color: '#fff', weight: 2.5, fillColor: CATS[p.cat].color, fillOpacity: 1,
-        dashArray: p.approx ? '3 3' : null
-      }).bindPopup(popupHtml(p), { maxWidth: 280, autoPanPaddingTopLeft: [10, 80] });
-      m.addTo(layers[p.cat]);
-      markers[p.id] = m;
+    if (mapReady) return mapReady;
+    mapReady = Promise.all([
+      google.maps.importLibrary('maps'),
+      google.maps.importLibrary('marker'),
+      google.maps.importLibrary('core')
+    ]).then(function (libs) {
+      var Map = libs[0].Map;
+      var AdvancedMarkerElement = libs[1].AdvancedMarkerElement;
+      var ColorScheme = libs[2].ColorScheme;
+      map = new Map(document.getElementById('map'), {
+        mapId: window.GMAPS.mapId,
+        colorScheme: ColorScheme.FOLLOW_SYSTEM,
+        disableDefaultUI: true,
+        gestureHandling: 'greedy',
+        clickableIcons: false
+      });
+      map.fitBounds(TOKYO);
+      info = new google.maps.InfoWindow({ maxWidth: 280 });
+      PLACES.forEach(function (p) {
+        var m = new AdvancedMarkerElement({
+          map: hiddenCats[p.cat] ? null : map,
+          position: { lat: p.lat, lng: p.lng },
+          content: dotFor(p),
+          title: p.name,
+          gmpClickable: true
+        });
+        m.addEventListener('gmp-click', function () { openPopup(p); });
+        markers[p.id] = m;
+      });
+      buildChips();
+      return map;
+    }).catch(function (e) {
+      mapReady = null;
+      toast('The map could not load. Check your connection.');
+      throw e;
     });
-    buildChips();
-    return true;
+    return mapReady;
+  }
+
+  function openPopup(p) {
+    info.setContent(popupHtml(p));
+    info.open({ map: map, anchor: markers[p.id] });
   }
 
   function buildChips() {
@@ -65,7 +101,8 @@ var PLACES = window.PLACES || [];
       b.addEventListener('click', function () {
         var on = b.getAttribute('aria-pressed') === 'true';
         b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        if (on) { map.removeLayer(layers[c]); hiddenCats[c] = 1; } else { layers[c].addTo(map); delete hiddenCats[c]; }
+        if (on) { hiddenCats[c] = 1; } else { delete hiddenCats[c]; }
+        applyCat(c);
         try { localStorage.setItem('japan2026-hidden', JSON.stringify(hiddenCats)); } catch (e) {}
         updateNear();
       });
@@ -73,25 +110,30 @@ var PLACES = window.PLACES || [];
     });
   }
 
+  function applyCat(c) {
+    PLACES.forEach(function (p) {
+      if (p.cat === c) markers[p.id].map = hiddenCats[c] ? null : map;
+    });
+  }
+
   function showCat(c) {
-    if (hiddenCats[c]) {
-      layers[c].addTo(map); delete hiddenCats[c];
-      var chips = document.querySelectorAll('.chip');
-      Object.keys(CATS).forEach(function (k, i) { if (k === c) chips[i].setAttribute('aria-pressed', 'true'); });
-    }
+    if (!hiddenCats[c]) return;
+    delete hiddenCats[c];
+    applyCat(c);
+    var chips = document.querySelectorAll('.chip');
+    Object.keys(CATS).forEach(function (k, i) { if (k === c) chips[i].setAttribute('aria-pressed', 'true'); });
   }
 
   function focusPlace(id) {
     var p = PLACES.filter(function (x) { return x.id === id; })[0];
     if (!p) return;
     show('map', true);
-    setTimeout(function () {
-      if (!initMap()) return;
-      map.invalidateSize();
+    initMap().then(function () {
       showCat(p.cat);
-      map.setView([p.lat, p.lng], Math.max(map.getZoom(), 16));
-      markers[id].openPopup();
-    }, 60);
+      map.panTo({ lat: p.lat, lng: p.lng });
+      zoomAtLeast(16);
+      openPopup(p);
+    }).catch(function () {});
   }
 
   // ---- location ----
@@ -122,12 +164,24 @@ var PLACES = window.PLACES || [];
   function onPos(pos) {
     userPos = [pos.coords.latitude, pos.coords.longitude];
     document.getElementById('toast').hidden = true;
-    var acc = pos.coords.accuracy;
+    var here = { lat: userPos[0], lng: userPos[1] }, acc = pos.coords.accuracy;
+    if (!map) { updateNear(); return; }
     if (!userMarker) {
-      userMarker = L.marker(userPos, { icon: L.divIcon({ className: '', html: '<div class="userdot"></div>', iconSize: [18, 18] }), interactive: false, zIndexOffset: 1000 }).addTo(map);
-      userCircle = L.circle(userPos, { radius: acc, color: '#1a73e8', weight: 1, fillColor: '#1a73e8', fillOpacity: 0.12, interactive: false }).addTo(map);
-    } else { userMarker.setLatLng(userPos); userCircle.setLatLng(userPos).setRadius(acc); }
-    if (firstFix) { firstFix = false; map.setView(userPos, 16); }
+      var dot = document.createElement('div');
+      dot.className = 'userdot';
+      userMarker = new (google.maps.marker.AdvancedMarkerElement)({
+        map: map, position: here, content: dot, zIndex: 1000
+      });
+      userCircle = new google.maps.Circle({
+        map: map, center: here, radius: acc, clickable: false,
+        strokeColor: '#1a73e8', strokeWeight: 1, strokeOpacity: 0.5,
+        fillColor: '#1a73e8', fillOpacity: 0.12
+      });
+    } else {
+      userMarker.position = here;
+      userCircle.setCenter(here); userCircle.setRadius(acc);
+    }
+    if (firstFix) { firstFix = false; map.panTo(here); map.setZoom(16); }
     updateNear();
   }
   function onErr(err) {
@@ -147,7 +201,10 @@ var PLACES = window.PLACES || [];
 
   function locate() {
     if (!navigator.geolocation) { toast('This browser cannot share location.'); return; }
-    if (watchId !== null && userPos) { map.setView(userPos, Math.max(map.getZoom(), 16)); return; }
+    if (watchId !== null && userPos) {
+      if (map) { map.panTo({ lat: userPos[0], lng: userPos[1] }); zoomAtLeast(16); }
+      return;
+    }
     document.getElementById('locate').classList.add('on');
     firstFix = true;
     toast('Finding you…');
@@ -167,7 +224,7 @@ var PLACES = window.PLACES || [];
     document.body.classList.toggle('maptab', name === 'map');
     try { localStorage.setItem('japan2026-tab', name); } catch (e) {}
     if (push) { try { history.replaceState(null, '', '#' + name); } catch (e) {} window.scrollTo(0, 0); }
-    if (name === 'map') { setTimeout(function () { if (initMap()) { map.invalidateSize(); autoLocate(); } }, 30); }
+    if (name === 'map') { initMap().then(autoLocate).catch(function () {}); }
   }
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { show(t.dataset.tab, true); });
@@ -182,11 +239,18 @@ var PLACES = window.PLACES || [];
   document.querySelectorAll('.pin').forEach(function (b) {
     b.addEventListener('click', function () { focusPlace(+b.dataset.id); });
   });
-  document.getElementById('locate').addEventListener('click', function () { if (initMap()) locate(); });
-  document.getElementById('fitTokyo').addEventListener('click', function () { if (initMap()) map.fitBounds(TOKYO); });
+  document.getElementById('locate').addEventListener('click', function () {
+    initMap().then(locate).catch(function () {});
+  });
+  document.getElementById('fitTokyo').addEventListener('click', function () {
+    initMap().then(function () { map.fitBounds(TOKYO); }).catch(function () {});
+  });
   document.getElementById('fitAll').addEventListener('click', function () {
-    if (!initMap()) return;
-    map.fitBounds(PLACES.map(function (p) { return [p.lat, p.lng]; }), { padding: [30, 30] });
+    initMap().then(function () {
+      var b = new google.maps.LatLngBounds();
+      PLACES.forEach(function (p) { b.extend({ lat: p.lat, lng: p.lng }); });
+      map.fitBounds(b, 30);
+    }).catch(function () {});
   });
 
   var start = location.hash.slice(1);
