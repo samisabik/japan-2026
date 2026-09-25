@@ -331,19 +331,9 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Nakameguro/data=!4m2!3m1!1s0x60188b382f36ab01:0xaa463fc3c5ac293a"
  },
  {
-  "id": 33,
-  "name": "Discover Noh and Kyogen",
-  "note": "Fri 30 Oct, after you fly home.",
-  "cat": "other",
-  "lat": 35.68029,
-  "lng": 139.70816,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/National+Noh+Theater/data=!4m2!3m1!1s0x60188cbf6e91aa23:0x9718925091c00fb9"
- },
- {
   "id": 34,
   "name": "Neko Machi Gallery",
-  "note": "Gallery in Yanaka, near the hotel.",
+  "note": "Gallery in Yanaka.",
   "cat": "shopping",
   "lat": 35.72291,
   "lng": 139.76472,
@@ -593,7 +583,7 @@ window.PLACES = [
  {
   "id": 60,
   "name": "Yanesen",
-  "note": "Old Tokyo streets around the hotel. Info centre.",
+  "note": "Old Tokyo streets in Yanaka, Nezu and Sendagi. Info centre.",
   "cat": "see",
   "lat": 35.72502,
   "lng": 139.76827,
@@ -1039,35 +1029,5 @@ window.PLACES = [
   "lng": 139.87682,
   "approx": false,
   "url": "https://www.google.com/maps/place/Utsunomiya/data=!4m2!3m1!1s0x601f666c9356803b:0xc9357749798654c2"
- },
- {
-  "id": 105,
-  "name": "End: Lake Kurobe",
-  "note": "end hiking",
-  "cat": "adventures",
-  "lat": 36.5663,
-  "lng": 137.6627,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Lake+Kurobe/data=!4m2!3m1!1s0x5ff7e147ab138083:0x830e54103455f6ed"
- },
- {
-  "id": 107,
-  "name": "Route: Yomiuri Shindo to Kumonodaira",
-  "note": "All the Peaks guide. Mountain huts start closing in October, so check they are open.",
-  "cat": "adventures",
-  "lat": 36.415,
-  "lng": 137.575,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Nagano/data=!4m2!3m1!1s0x601d805de6344499:0xf128a974072892c8"
- },
- {
-  "id": 108,
-  "name": "Start: Shinhotaka Ropeway",
-  "note": "start hiking",
-  "cat": "adventures",
-  "lat": 36.28212,
-  "lng": 137.58092,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Shinhotaka+Ropeway+No.2+Ropeway/data=!4m2!3m1!1s0x601d4fc48865aa39:0x20c7af94ed60e172"
  }
 ];

@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url('vendor/atkinson-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url('vendor/atkinson-700.woff2') format('woff2');
+}
+
 :root {
     --bg: #F2F4F3;
     --text: #1F2428;
@@ -52,11 +63,7 @@
   li::marker { color: var(--muted); }
   .note { color: var(--muted); display: block; font-size: 1.05rem; }
 
-  .check { list-style: none; padding: 0; }
-  .check li { margin-bottom: 0.9rem; }
-  .check label { display: flex; gap: 0.8rem; align-items: flex-start; cursor: pointer; }
-  .check input { width: 1.4rem; height: 1.4rem; margin-top: 0.25rem; flex-shrink: 0; accent-color: var(--link); }
-  .check input:checked + span { color: var(--muted); text-decoration: line-through; }
+
 
   blockquote {
     margin: 3rem 0 0; padding: 1.2rem 0 0; border-top: 2px solid var(--rule);
@@ -128,4 +135,4 @@
   .userdot { width: 18px; height: 18px; border-radius: 50%; background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.4); box-sizing: border-box; }
   main { padding-top: 0.5rem; }
   section > h2:first-child { border-top: 0; margin-top: 1rem; padding-top: 0; }
-.fab.gmm { display: grid; place-items: center; text-decoration: none; font-size: 0.8rem; }
+.fab

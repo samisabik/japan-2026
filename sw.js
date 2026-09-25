@@ -1,7 +1,6 @@
-var SHELL = 'japan2026-shell-v3', TILES = 'japan2026-tiles-v1';
+var SHELL = 'japan2026-shell-v7', TILES = 'japan2026-tiles-v1';
 var SHELL_FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './styles.css', './places.js', './app.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css',
-  'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'];
+  './vendor/leaflet.css', './vendor/leaflet.js', './vendor/atkinson-400.woff2', './vendor/atkinson-700.woff2'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(SHELL).then(function (c) { return c.addAll(SHELL_FILES); }).then(function () { return self.skipWaiting(); }));
 });
@@ -24,7 +23,7 @@ self.addEventListener('fetch', function (e) {
   }
   // page: try the network first so updates show up, fall back to the saved copy offline
   e.respondWith(fetch(e.request).then(function (res) {
-    if (res.ok && (url.indexOf(self.location.origin) === 0 || url.indexOf('cdnjs.cloudflare.com') !== -1)) {
+    if (res.ok && url.indexOf(self.location.origin) === 0) {
       var copy = res.clone(); caches.open(SHELL).then(function (c) { c.put(e.request, copy); });
     }
     return res;

@@ -6,11 +6,11 @@ It has five tabs:
 
 - **Shopping:** second-hand shops, books, art and synth shops
 - **To see:** museums, sights, neighbourhoods, markets and galleries, Kyoto
-- **Adventures:** the Northern Alps hike and day trips
+- **Adventures:** day trips out of Tokyo
 - **Food & bars:** restaurants, bars and live music
 - **Map:** every saved place as a coloured pin, plus live location and the places closest to you
 
-It installs on Android as an app (Chrome → ⋮ → Add to home screen) and keeps working offline.
+It installs as an app from the browser's menu (Add to home screen) and keeps working offline.
 
 ## Deploy to GitHub Pages
 
@@ -40,7 +40,7 @@ Then open http://localhost:8000. Location only works on `localhost` or `https`, 
 |---|---|
 | `index.html` | The page: all tab content and the map container |
 | `styles.css` | Every style, including light and dark colours |
-| `app.js` | Tabs, checklists, map, live location, "closest to you" |
+| `app.js` | Tabs, map, live location, "closest to you" |
 | `places.js` | The places shown on the map (edit this to add, move or fix pins) |
 | `sw.js` | Offline support: caches the page and the map areas you've viewed |
 | `manifest.webmanifest`, `icon-*.png` | Lets the site install as an app |

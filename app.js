@@ -1,14 +1,5 @@
 var PLACES = window.PLACES || [];
 (function () {
-  // ---- checklists ----
-  document.querySelectorAll('.check input').forEach(function (box) {
-    var key = 'japan2026-' + box.dataset.key;
-    try { box.checked = localStorage.getItem(key) === '1'; } catch (e) {}
-    box.addEventListener('change', function () {
-      try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
-    });
-  });
-
   // ---- categories ----
   var CATS = {
     shopping: { label: 'Shopping', color: '#D2691E' },
@@ -144,6 +135,16 @@ var PLACES = window.PLACES || [];
     if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
     toast(err.code === 1 ? 'Location is blocked. Allow it for this site in Chrome settings.' : 'Could not find your location. Try again outside.');
   }
+  // Start tracking without a tap if this browser has already been given permission.
+  // Only runs when the Permissions API can confirm it, so a first-time visitor
+  // never gets an unprompted location request.
+  function autoLocate() {
+    if (!navigator.geolocation || !navigator.permissions || watchId !== null) return;
+    navigator.permissions.query({ name: 'geolocation' }).then(function (p) {
+      if (p.state === 'granted') locate();
+    }).catch(function () {});
+  }
+
   function locate() {
     if (!navigator.geolocation) { toast('This browser cannot share location.'); return; }
     if (watchId !== null && userPos) { map.setView(userPos, Math.max(map.getZoom(), 16)); return; }
@@ -166,7 +167,7 @@ var PLACES = window.PLACES || [];
     document.body.classList.toggle('maptab', name === 'map');
     try { localStorage.setItem('japan2026-tab', name); } catch (e) {}
     if (push) { try { history.replaceState(null, '', '#' + name); } catch (e) {} window.scrollTo(0, 0); }
-    if (name === 'map') { setTimeout(function () { if (initMap()) map.invalidateSize(); }, 30); }
+    if (name === 'map') { setTimeout(function () { if (initMap()) { map.invalidateSize(); autoLocate(); } }, 30); }
   }
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { show(t.dataset.tab, true); });
