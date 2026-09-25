@@ -1,6 +1,6 @@
 # Japan 2026
 
-A phone-first guide to saved places in Japan. It's a plain static website with no build step: open `index.html` and it works.
+A phone-first guide to saved places in Japan. It's a plain static website with no build step and no framework: the files are served as they are.
 
 It has five tabs:
 
@@ -10,7 +10,11 @@ It has five tabs:
 - **Food & bars:** restaurants, bars and live music
 - **Map:** every saved place as a coloured pin, plus live location and the places closest to you
 
-It installs as an app from the browser's menu (Add to home screen) and keeps working offline.
+It installs as an app from the browser's menu (Add to home screen). The lists, notes and Google Maps links keep working with no signal. The map itself needs a connection, because Google's tiles cannot be cached.
+
+## Google Maps key
+
+The map is the [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript). It needs an API key and a map ID, both in `config.js`. They are public by design: the key is restricted by HTTP referrer in the Google Cloud console to the domain the site is served from, which is what stops anyone else spending the quota. Add `http://localhost:*` to those referrers to work on it locally.
 
 ## Deploy to GitHub Pages
 
@@ -32,7 +36,7 @@ After a minute or two the site is live at `https://<your-username>.github.io/jap
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000. Location only works on `localhost` or `https`, not when you open the file directly.
+Then open http://localhost:8000. Location only works on `localhost` or `https`, not when you open the file directly, and the map only loads if `localhost` is one of the key's allowed referrers.
 
 ## Files
 
@@ -40,14 +44,16 @@ Then open http://localhost:8000. Location only works on `localhost` or `https`, 
 |---|---|
 | `index.html` | The page: all tab content and the map container |
 | `styles.css` | Every style, including light and dark colours |
-| `app.js` | Tabs, map, live location, "closest to you" |
+| `app.js` | Tabs, map, category filters, live location, "closest to you" |
 | `places.js` | The places shown on the map (edit this to add, move or fix pins) |
-| `sw.js` | Offline support: caches the page and the map areas you've viewed |
+| `sw.js` | Offline support: caches the page and its files. Bump the cache name when you change any of them |
 | `manifest.webmanifest`, `icon-*.png` | Lets the site install as an app |
+| `config.js` | The Google Maps API key and map ID |
+| `vendor/` | The Atkinson Hyperlegible font files, served from here rather than Google Fonts |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 `data/` holds the source exports the places were built from. It is gitignored: the site never loads from it.
 
 ## Credits
 
-The map uses [Leaflet](https://leafletjs.com/) with map tiles from [CARTO](https://carto.com/) and [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
+The map is the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript). The typeface is [Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont/) from the Braille Institute.
