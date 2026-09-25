@@ -38,9 +38,8 @@ var PLACES = window.PLACES || [];
 
   function dotFor(p) {
     var d = document.createElement('div');
-    d.className = 'dot' + (p.approx ? ' approx' : '');
+    d.className = 'dot';
     d.style.background = CATS[p.cat].color;
-    if (p.approx) d.style.borderColor = CATS[p.cat].color;
     return d;
   }
 
