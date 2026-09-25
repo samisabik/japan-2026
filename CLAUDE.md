@@ -10,6 +10,7 @@ Static trip map for Japan, on GitHub Pages. Plain HTML, CSS and ES5-style JS, no
 - `config.js`: Maps API key and map ID. Public on purpose, restricted by HTTP referrer in the Google Cloud console.
 - `map-style.json`: the base map style. The map uses a map ID, so `styles` in code is ignored and this has to be imported in the Cloud console under Map Styles, then attached to the map ID. Keep this file in step with what is live there.
 - `sw.js`: caches same-origin files so the lists work with no signal. Google requests pass through, so the map needs data. **Bump `japan2026-shell-vN` after changing any cached file.**
+- Tab bar icons are Material Symbols (Apache 2.0), inlined as paths so nothing loads from Google Fonts.
 - One colour per category, on the pins and the matching tab. Keep it plain: short notes, big tap targets, dark mode from `:root`.
 
 Adding a place: entry in `places.js`, matching `<li>` in the right panel, bump the cache version.
