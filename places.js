@@ -899,5 +899,15 @@ window.PLACES = [
   "lng": 139.87682,
   "approx": false,
   "url": "https://www.google.com/maps/place/Utsunomiya/data=!4m2!3m1!1s0x601f666c9356803b:0xc9357749798654c2"
+ },
+ {
+  "id": 105,
+  "name": "Chatei Hatou 茶亭 羽當",
+  "note": "Classic kissaten near Shibuya Station. A friend's pick.",
+  "cat": "other",
+  "lat": 35.66047,
+  "lng": 139.70278,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E8%8C%B6%E4%BA%AD%20%E7%BE%BD%E7%95%B6%20%E6%B8%8B%E8%B0%B71-15-19"
  }
 ];
