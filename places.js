@@ -979,5 +979,45 @@ window.PLACES = [
   "lng": 139.57526,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=maunga%20%E5%90%89%E7%A5%A5%E5%AF%BA%E5%BA%97%20%E5%90%89%E7%A5%A5%E5%AF%BA%E6%9C%AC%E7%94%BA2-26-1"
+ },
+ {
+  "id": 113,
+  "name": "Koenji",
+  "note": "100+ vintage shops near the south exit, plus records and live houses. Like Shimokitazawa, rougher and cheaper.",
+  "cat": "see",
+  "lat": 35.70534,
+  "lng": 139.65,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%85"
+ },
+ {
+  "id": 114,
+  "name": "Nakano Broadway",
+  "note": "1966 arcade full of vintage toys and retro games. Mandarake Henya for antique toys. Next to Fujiya Camera.",
+  "cat": "shopping",
+  "lat": 35.70992,
+  "lng": 139.66567,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E9%87%8E%E3%83%96%E3%83%AD%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A4%20%E4%B8%AD%E9%87%8E5-52-15"
+ },
+ {
+  "id": 115,
+  "name": "JBS (Jazz, Blues, Soul)",
+  "note": "Tiny listening bar, 11,000 records, full LPs. Drinks ¥500. Keep it quiet, no requests. Dogenzaka.",
+  "cat": "other",
+  "lat": 35.65706,
+  "lng": 139.69672,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=JBS%20%E6%B8%8B%E8%B0%B7%20%E9%81%93%E7%8E%84%E5%9D%821-17-10"
+ },
+ {
+  "id": 116,
+  "name": "Intermediatheque",
+  "note": "Free University of Tokyo museum of skeletons and old instruments in antique cabinets. KITTE 2–3F. Closed Mondays.",
+  "cat": "see",
+  "lat": 35.67909,
+  "lng": 139.76468,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=Intermediatheque%20KITTE%20%E4%B8%B8%E3%81%AE%E5%86%85"
  }
 ];
