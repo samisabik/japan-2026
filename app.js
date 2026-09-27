@@ -75,7 +75,7 @@ var PLACES = window.PLACES || [];
         m.addEventListener('gmp-click', function () { openPopup(p); });
         markers[p.id] = m;
       });
-      buildChips();
+      buildFilter();
       return map;
     }).catch(function (e) {
       mapReady = null;
@@ -90,37 +90,69 @@ var PLACES = window.PLACES || [];
     info.open({ map: map, anchor: markers[p.id] });
   }
 
-  function buildChips() {
-    var box = document.getElementById('chips');
-    Object.keys(CATS).forEach(function (c) {
-      var b = document.createElement('button');
-      b.className = 'chip';
-      b.setAttribute('aria-pressed', hiddenCats[c] ? 'false' : 'true');
-      b.innerHTML = '<i style="background:' + CATS[c].color + '"></i>' + CATS[c].label;
-      b.addEventListener('click', function () {
-        var on = b.getAttribute('aria-pressed') === 'true';
-        b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        if (on) { hiddenCats[c] = 1; } else { delete hiddenCats[c]; }
-        applyCat(c);
-        try { localStorage.setItem('japan2026-hidden', JSON.stringify(hiddenCats)); } catch (e) {}
-        updateNear();
-      });
-      box.appendChild(b);
-    });
+  function saveHidden() {
+    try { localStorage.setItem('japan2026-hidden', JSON.stringify(hiddenCats)); } catch (e) {}
   }
 
-  function applyCat(c) {
-    PLACES.forEach(function (p) {
-      if (p.cat === c) markers[p.id].map = hiddenCats[c] ? null : map;
+  function applyAll() {
+    PLACES.forEach(function (p) { markers[p.id].map = hiddenCats[p.cat] ? null : map; });
+    var boxes = document.querySelectorAll('#filterPanel input');
+    Array.prototype.forEach.call(boxes, function (b) { b.checked = !hiddenCats[b.dataset.cat]; });
+    var shown = Object.keys(CATS).filter(function (c) { return !hiddenCats[c]; });
+    document.getElementById('filterLabel').textContent =
+      shown.length === Object.keys(CATS).length ? 'All places' :
+      shown.length === 1 ? CATS[shown[0]].label :
+      shown.length === 0 ? 'Nothing shown' : shown.length + ' of ' + Object.keys(CATS).length;
+    saveHidden();
+    updateNear();
+  }
+
+  function showOnly(c) {
+    hiddenCats = {};
+    if (c !== 'all') Object.keys(CATS).forEach(function (k) { if (k !== c) hiddenCats[k] = 1; });
+    applyAll();
+    setPanel(false);
+  }
+
+  function setPanel(open) {
+    document.getElementById('filterPanel').hidden = !open;
+    document.getElementById('filterBtn').setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function buildFilter() {
+    var panel = document.getElementById('filterPanel');
+    var html = '<button class="frow fall" data-only="all">Show all</button>';
+    Object.keys(CATS).forEach(function (c) {
+      html += '<div class="frow"><label><input type="checkbox" data-cat="' + c + '">' +
+        '<i style="background:' + CATS[c].color + '"></i>' + CATS[c].label + '</label>' +
+        '<button class="only" data-only="' + c + '" aria-label="Show only ' + CATS[c].label + '">Only</button></div>';
     });
+    panel.innerHTML = html;
+    panel.addEventListener('change', function (e) {
+      var c = e.target.dataset.cat;
+      if (!c) return;
+      if (e.target.checked) delete hiddenCats[c]; else hiddenCats[c] = 1;
+      applyAll();
+    });
+    panel.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-only]');
+      if (b) showOnly(b.dataset.only);
+    });
+    document.getElementById('filterBtn').addEventListener('click', function (e) {
+      e.stopPropagation();
+      setPanel(panel.hidden);
+    });
+    document.addEventListener('click', function (e) {
+      if (!panel.hidden && !e.target.closest('.filter')) setPanel(false);
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setPanel(false); });
+    applyAll();
   }
 
   function showCat(c) {
     if (!hiddenCats[c]) return;
     delete hiddenCats[c];
-    applyCat(c);
-    var chips = document.querySelectorAll('.chip');
-    Object.keys(CATS).forEach(function (k, i) { if (k === c) chips[i].setAttribute('aria-pressed', 'true'); });
+    applyAll();
   }
 
   function focusPlace(id) {
