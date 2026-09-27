@@ -979,5 +979,65 @@ window.PLACES = [
   "lng": 139.76468,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=Intermediatheque%20KITTE%20%E4%B8%B8%E3%81%AE%E5%86%85"
+ },
+ {
+  "id": 117,
+  "name": "Sushi no Midori, Umegaoka",
+  "note": "LLM pick, not a friend's. Sushi. The original branch of a local favourite, famous for generous, cheap sets (about ¥2,000–4,000). Ticket queue at the door; reservations also taken. A minute from Umegaoka station, near Gotokuji.",
+  "cat": "other",
+  "lat": 35.65559,
+  "lng": 139.65407,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E6%A2%85%E4%B8%98%E5%AF%BF%E5%8F%B8%E3%81%AE%E7%BE%8E%E7%99%BB%E5%88%A9%20%E7%B7%8F%E6%9C%AC%E5%BA%97"
+ },
+ {
+  "id": 118,
+  "name": "Tachigui Sushi Akira, Shinbashi",
+  "note": "LLM pick, not a friend's. Sushi. 7-person standing counter from a top omakase chef; reviewers call it omakase quality at a fraction of the price. Lunch ¥6–8k, dinner more. First come, first served, hourly seatings. Closed Wednesdays.",
+  "cat": "other",
+  "lat": 35.6655,
+  "lng": 139.75548,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E7%AB%8B%E5%96%B0%E3%81%84%E5%AF%BF%E5%8F%B8%20%E3%81%82%E3%81%8D%E3%82%89%20%E6%96%B0%E6%A9%8B"
+ },
+ {
+  "id": 119,
+  "name": "Harukiya, Ogikubo",
+  "note": "LLM pick, not a friend's. Ramen. Old-school Tokyo shoyu since 1949, light sardine-scented broth. 18 seats, walk in, card only. Ogikubo is two stops past Koenji.",
+  "cat": "other",
+  "lat": 35.70511,
+  "lng": 139.62244,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E6%98%A5%E6%9C%A8%E5%B1%8B%20%E8%8D%BB%E7%AA%AA%E6%9C%AC%E5%BA%97"
+ },
+ {
+  "id": 120,
+  "name": "Kamunabi, Sendagi",
+  "note": "LLM pick, not a friend's. Ramen. Family-run shoyu ramen with a famously huge slab of chashu; on Tabelog's top-100 list every year. 13 seats, no reservations, cash only, closes when sold out. Closed Mon–Tue. Near Yanesen.",
+  "cat": "other",
+  "lat": 35.73106,
+  "lng": 139.76071,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%90%8D%E5%82%99%20%E5%8D%83%E9%A7%84%E6%9C%A8"
+ },
+ {
+  "id": 121,
+  "name": "Iseya Sohonten, Kichijoji",
+  "note": "LLM pick, not a friend's. Yakitori. Smoky, cheap skewers on the charcoal since 1928, locals and a queue at the grill window. Cash only, closed Tuesdays. By Inokashira Park.",
+  "cat": "other",
+  "lat": 35.70248,
+  "lng": 139.5769,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%81%84%E3%81%9B%E3%82%84%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%90%89%E7%A5%A5%E5%AF%BA"
+ },
+ {
+  "id": 122,
+  "name": "Uchida, Tateishi",
+  "note": "LLM pick, not a friend's. Yakiton (pork offal skewers). 70-year-old Showa bar in Tokyo's most old-fashioned drinking town, around ¥200 a plate. Strict house rules: Japanese-only ordering, no phones on the counter. Brave but real.",
+  "cat": "other",
+  "lat": 35.73801,
+  "lng": 139.84891,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E5%AE%87%E3%81%A1%E5%A4%9A%20%E7%AB%8B%E7%9F%B3"
  }
 ];
