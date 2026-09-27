@@ -909,5 +909,35 @@ window.PLACES = [
   "lng": 139.70278,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=%E8%8C%B6%E4%BA%AD%20%E7%BE%BD%E7%95%B6%20%E6%B8%8B%E8%B0%B71-15-19"
+ },
+ {
+  "id": 106,
+  "name": "Fujiya Camera",
+  "note": "Fair-priced film cameras. The Junk Hall next door has bargain bins of point-and-shoots, sold as-is. Nakano.",
+  "cat": "shopping",
+  "lat": 35.70674,
+  "lng": 139.66655,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%B8%E3%83%A4%E3%82%AB%E3%83%A1%E3%83%A9%20%E6%9C%AC%E5%BA%97%20%E4%B8%AD%E9%87%8E5-61-1"
+ },
+ {
+  "id": 107,
+  "name": "Five Star Camera",
+  "note": "Point-and-shoots and film gear, prices on every item. English-speaking staff. Hamayu Bldg 2F, Nishi-Shinjuku.",
+  "cat": "shopping",
+  "lat": 35.68938,
+  "lng": 139.69669,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=Five%20Star%20Camera%20%E8%A5%BF%E6%96%B0%E5%AE%BF1-13-6"
+ },
+ {
+  "id": 108,
+  "name": "Used Camera Box",
+  "note": "Tiny basement shop packed with film compacts. The owner tests before you buy. Cash only. Next door to Five Star.",
+  "cat": "shopping",
+  "lat": 35.68945,
+  "lng": 139.69656,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=Used%20camera%20BOX%20%E8%A5%BF%E6%96%B0%E5%AE%BF1-13-7"
  }
 ];
