@@ -621,16 +621,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Cafe+Stay+Happy/data=!4m2!3m1!1s0x6018f3698c4f2c57:0xea22b1a36b128362"
  },
  {
-  "id": 65,
-  "name": "Chabuzen",
-  "note": "food",
-  "cat": "other",
-  "lat": 35.66681,
-  "lng": 139.66344,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Chabuzen/data=!4m2!3m1!1s0x6018f31233354a79:0x126381a731000aee"
- },
- {
   "id": 66,
   "name": "CoCo Ichibanya",
   "note": "Curry chain.",
@@ -639,16 +629,6 @@ window.PLACES = [
   "lng": 139.74454,
   "approx": true,
   "url": "https://www.google.com/maps/place/CoCo+Ichibanya/data=!4m2!3m1!1s0x60188dbd06eda723:0xdb47ca55e242c072"
- },
- {
-  "id": 67,
-  "name": "Falafel Brothers",
-  "note": "Shibuya Parco, 7F.",
-  "cat": "other",
-  "lat": 35.662,
-  "lng": 139.6985,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/FALAFEL+BROTHERS+Shibuya+PARCO+7F/data=!4m2!3m1!1s0x60188db8e0a27041:0xce61404c6a3d24a4"
  },
  {
   "id": 68,
@@ -669,16 +649,6 @@ window.PLACES = [
   "lng": 139.702,
   "approx": true,
   "url": "https://www.google.com/maps/place/GYUMON+Shinjuku/data=!4m2!3m1!1s0x60188d7892c6657b:0xab34dd23118e0e5f"
- },
- {
-  "id": 71,
-  "name": "Ming Teng HAO HAO",
-  "note": "",
-  "cat": "other",
-  "lat": 35.65859,
-  "lng": 139.75925,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Ming+Teng+HAO+HAO/data=!4m2!3m1!1s0x60188bc4458f6997:0x3445593a13b419d4"
  },
  {
   "id": 72,
@@ -769,16 +739,6 @@ window.PLACES = [
   "lng": 135.79487,
   "approx": true,
   "url": "https://www.google.com/maps/place/MOON+and+BACK+Ramen+Bar+%26+Brunch+Cafe/data=!4m2!3m1!1s0x60010904a842f9f1:0x856c6b20db85cf17"
- },
- {
-  "id": 89,
-  "name": "Padma",
-  "note": "food",
-  "cat": "other",
-  "lat": 35.02577,
-  "lng": 135.77661,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Padma/data=!4m2!3m1!1s0x60010858dbc02b5f:0x47aac0f01e08a683"
  },
  {
   "id": 93,
