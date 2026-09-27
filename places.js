@@ -939,5 +939,45 @@ window.PLACES = [
   "lng": 139.69656,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=Used%20camera%20BOX%20%E8%A5%BF%E6%96%B0%E5%AE%BF1-13-7"
+ },
+ {
+  "id": 109,
+  "name": "Ishii Sports Tozan Honten",
+  "note": "Flagship mountain shop, 100+ brands including Rab and Black Diamond. Takii Tokyo Bldg 2F, Jimbocho.",
+  "cat": "shopping",
+  "lat": 35.69628,
+  "lng": 139.7594,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E4%BA%95%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%20%E7%99%BB%E5%B1%B1%E6%9C%AC%E5%BA%97%20%E7%A5%9E%E7%94%B0%E7%A5%9E%E4%BF%9D%E7%94%BA1-6-1"
+ },
+ {
+  "id": 110,
+  "name": "Sakaiya Sports",
+  "note": "Jimbocho mountain-gear institution with expert staff. Stocks Rab. Several buildings on the same street.",
+  "cat": "shopping",
+  "lat": 35.69771,
+  "lng": 139.75624,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%81%95%E3%81%8B%E3%81%84%E3%82%84%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%20%E6%9C%AC%E5%BA%97%20%E7%A5%9E%E7%94%B0%E7%A5%9E%E4%BF%9D%E7%94%BA2-30"
+ },
+ {
+  "id": 111,
+  "name": "Ishii Sports Shinjuku Nishiguchi",
+  "note": "Under Yodobashi, B1 and B2. Stocks Rab. Two minutes from the camera shops.",
+  "cat": "shopping",
+  "lat": 35.69,
+  "lng": 139.6985,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E4%BA%95%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%20%E3%83%A8%E3%83%89%E3%83%90%E3%82%B7%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3%E5%BA%97"
+ },
+ {
+  "id": 112,
+  "name": "maunga Kichijoji",
+  "note": "Second-hand outdoor gear, cleaned and repaired. Best bet for a cheap rain jacket. Nakamichi-dori.",
+  "cat": "shopping",
+  "lat": 35.70435,
+  "lng": 139.57526,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=maunga%20%E5%90%89%E7%A5%A5%E5%AF%BA%E5%BA%97%20%E5%90%89%E7%A5%A5%E5%AF%BA%E6%9C%AC%E7%94%BA2-26-1"
  }
 ];
