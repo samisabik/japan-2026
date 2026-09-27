@@ -55,9 +55,9 @@ window.PLACES = [
   "name": "Atlantis Vintage",
   "note": "",
   "cat": "shopping",
-  "lat": 35.65519,
-  "lng": 139.65724,
-  "approx": true,
+  "lat": 35.70427,
+  "lng": 139.64897,
+  "approx": false,
   "url": "https://www.google.com/maps/place/Atlantis+Vintage+Tokyo/data=!4m2!3m1!1s0x6018f3716e756c9d:0x447870765d3d6fcf"
  },
  {
@@ -165,9 +165,9 @@ window.PLACES = [
   "name": "Happy End Beans",
   "note": "Modular shop and coffee.",
   "cat": "shopping",
-  "lat": 35.645,
-  "lng": 139.66,
-  "approx": true,
+  "lat": 35.64891,
+  "lng": 139.66811,
+  "approx": false,
   "url": "https://www.google.com/maps/place/Happy+End+Beans+Coffee+Stand/data=!4m2!3m1!1s0x6018f3dde3e5bc13:0x24e0b94c1dac4420"
  },
  {
@@ -425,9 +425,9 @@ window.PLACES = [
   "name": "Okura",
   "note": "Shibuya",
   "cat": "shopping",
-  "lat": 35.6605,
-  "lng": 139.6985,
-  "approx": true,
+  "lat": 35.64908,
+  "lng": 139.70122,
+  "approx": false,
   "url": "https://www.google.com/maps/place/OKURA+Shibuya+Center-gai/data=!4m2!3m1!1s0x60188d33e97a356b:0x55fecd08c20ed171"
  },
  {
@@ -445,8 +445,8 @@ window.PLACES = [
   "name": "Salamanca",
   "note": "second hand shop - clothing",
   "cat": "shopping",
-  "lat": 35.72924,
-  "lng": 139.71296,
+  "lat": 35.66687,
+  "lng": 139.70602,
   "approx": false,
   "url": "https://www.google.com/maps/place/SALAMANCA/data=!4m2!3m1!1s0x60188d67ddc57bc3:0xb0b0aa4d0ee4a104"
  },
@@ -565,9 +565,9 @@ window.PLACES = [
   "name": "Uptown Record Store",
   "note": "Record shop",
   "cat": "shopping",
-  "lat": 35.63647,
-  "lng": 139.63311,
-  "approx": true,
+  "lat": 35.70789,
+  "lng": 139.64967,
+  "approx": false,
   "url": "https://www.google.com/maps/place/UPTOWN+RECORD+STORE/data=!4m2!3m1!1s0x6018f38b9079a21f:0x7e166beac6ba83fb"
  },
  {
@@ -625,9 +625,9 @@ window.PLACES = [
   "name": "Chabuzen",
   "note": "food",
   "cat": "other",
-  "lat": 35.66678,
-  "lng": 139.66307,
-  "approx": true,
+  "lat": 35.66681,
+  "lng": 139.66344,
+  "approx": false,
   "url": "https://www.google.com/maps/place/Chabuzen/data=!4m2!3m1!1s0x6018f31233354a79:0x126381a731000aee"
  },
  {
