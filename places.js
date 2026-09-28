@@ -1039,5 +1039,25 @@ window.PLACES = [
   "lng": 139.84891,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=%E5%AE%87%E3%81%A1%E5%A4%9A%20%E7%AB%8B%E7%9F%B3"
+ },
+ {
+  "id": 123,
+  "name": "Morihei",
+  "note": "Old blade and whetstone dealer since 1933, crammed with hand-forged pruning shears and garden knives made for professional gardeners. You can try sharpening stones. Weekdays only, 9:00–17:30. Asakusabashi.",
+  "cat": "shopping",
+  "lat": 35.69825,
+  "lng": 139.78531,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E6%A3%AE%E5%B9%B3%20%E6%B5%85%E8%8D%89%E6%A9%8B%20%E7%A0%A5%E7%9F%B3"
+ },
+ {
+  "id": 124,
+  "name": "Ubukeya",
+  "note": "Tiny blade shop since 1783, so sharp \"it cuts a baby's hair\". Ikebana flower shears, scissors and tweezers rather than big pruners. Closed Sundays. Ningyocho.",
+  "cat": "shopping",
+  "lat": 35.68691,
+  "lng": 139.78192,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%B6%E3%81%91%E3%82%84%20%E4%BA%BA%E5%BD%A2%E7%94%BA"
  }
 ];
