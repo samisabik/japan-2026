@@ -1059,5 +1059,25 @@ window.PLACES = [
   "lng": 139.78192,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%B6%E3%81%91%E3%82%84%20%E4%BA%BA%E5%BD%A2%E7%94%BA"
+ },
+ {
+  "id": 125,
+  "name": "BerBerJin",
+  "note": "Legendary vintage denim and workwear shop: old Levi's back to the 1800s, dead-stock chambray, military and work jackets. Pricey, museum-level. Harajuku.",
+  "cat": "shopping",
+  "lat": 35.67119,
+  "lng": 139.70815,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=BerBerJin%20%E5%8E%9F%E5%AE%BF"
+ },
+ {
+  "id": 126,
+  "name": "Slat",
+  "note": "Koenji favourite of fashion editors for American workwear, coveralls, military and flannel at fair prices, from about ¥3,000. Opens 12:30.",
+  "cat": "shopping",
+  "lat": 35.70305,
+  "lng": 139.64845,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E7%9D%80%E5%B1%8B%20Slat%E6%9C%AC%E5%BA%97%20%E9%AB%98%E5%86%86%E5%AF%BA"
  }
 ];
