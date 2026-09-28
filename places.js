@@ -1079,5 +1079,15 @@ window.PLACES = [
   "lng": 139.64845,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E7%9D%80%E5%B1%8B%20Slat%E6%9C%AC%E5%BA%97%20%E9%AB%98%E5%86%86%E5%AF%BA"
+ },
+ {
+  "id": 127,
+  "name": "Workshop Knuckle, Musashi-Koyama",
+  "note": "Proper Japanese work-clothing shop stocking XEBEC among 60+ builders' brands: jackets, trousers, safety shoes. Opens 6am for tradespeople. Near Musashi-Koyama station.",
+  "cat": "shopping",
+  "lat": 35.6165,
+  "lng": 139.71028,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%83%8A%E3%83%83%E3%82%AF%E3%83%AB%20%E6%AD%A6%E8%94%B5%E5%B0%8F%E5%B1%B1%E5%BA%97"
  }
 ];
