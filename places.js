@@ -1089,5 +1089,15 @@ window.PLACES = [
   "lng": 139.71028,
   "approx": false,
   "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%83%8A%E3%83%83%E3%82%AF%E3%83%AB%20%E6%AD%A6%E8%94%B5%E5%B0%8F%E5%B1%B1%E5%BA%97"
+ },
+ {
+  "id": 128,
+  "name": "Coffee PUNKTO",
+  "note": "You've been: nice. Tiny single-origin coffee stand at the door of the PUK puppet theatre, Japan's first. Early-bird discount 8–10am. Yoyogi, near Shinjuku south exit.",
+  "cat": "other",
+  "lat": 35.68665,
+  "lng": 139.69743,
+  "approx": false,
+  "url": "https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%83%97%E3%83%B3%E3%82%AF%E3%83%88%20%E4%BB%A3%E3%80%85%E6%9C%A82-12-3"
  }
 ];
