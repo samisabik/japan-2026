@@ -611,16 +611,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/Yoyogi+Park/data=!4m2!3m1!1s0x60188cb479620a33:0x34bcc78ce7f8bf3e"
  },
  {
-  "id": 64,
-  "name": "Cafe Stay Happy",
-  "note": "",
-  "cat": "other",
-  "lat": 35.66046,
-  "lng": 139.66923,
-  "approx": false,
-  "url": "https://www.google.com/maps/place/Cafe+Stay+Happy/data=!4m2!3m1!1s0x6018f3698c4f2c57:0xea22b1a36b128362"
- },
- {
   "id": 66,
   "name": "CoCo Ichibanya",
   "note": "Curry chain.",
@@ -651,16 +641,6 @@ window.PLACES = [
   "url": "https://www.google.com/maps/place/GYUMON+Shinjuku/data=!4m2!3m1!1s0x60188d7892c6657b:0xab34dd23118e0e5f"
  },
  {
-  "id": 72,
-  "name": "Neo Shinjuku Atsushi",
-  "note": "Food",
-  "cat": "other",
-  "lat": 35.6935,
-  "lng": 139.7,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/NEOShinjuku+Atsushi/data=!4m2!3m1!1s0x60188dd1d65e73cf:0x2642c976fcaa8cbf"
- },
- {
   "id": 73,
   "name": "Sakura-tei",
   "note": "Make-your-own okonomiyaki, Harajuku.",
@@ -689,16 +669,6 @@ window.PLACES = [
   "lng": 139.77667,
   "approx": false,
   "url": "https://www.google.com/maps/place/Tokyo+National+Museum/data=!4m2!3m1!1s0x60188e8314d77d11:0x232fd618bd4977dd"
- },
- {
-  "id": 80,
-  "name": "Zen",
-  "note": "food",
-  "cat": "other",
-  "lat": 35.69284,
-  "lng": 139.7082,
-  "approx": true,
-  "url": "https://www.google.com/maps/place/Zen/data=!4m2!3m1!1s0x60188cdc5979c3a1:0xe76e4ec91801f4c2"
  },
  {
   "id": 81,
